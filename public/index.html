@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealScan Premium - Admin Panel</title>
+    <link rel="stylesheet" href="/css/cyberpunk.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cyber-container">
+        <header class="cyber-header">
+            <h1 class="cyber-title glitch" data-text="RealScan Premium">RealScan Premium</h1>
+            <p class="cyber-subtitle">Advanced Mega888 Analysis System</p>
+        </header>
+        
+        <div class="cyber-grid">
+            <div class="cyber-card">
+                <div class="cyber-card-header">
+                    <i class="fas fa-key"></i> Kod Akses Generator
+                </div>
+                
+                <div class="cyber-form-group">
+                    <label class="cyber-label">Tempoh Sah Kod (minit)</label>
+                    <input type="number" class="cyber-input" id="accessDuration" value="30" min="1">
+                </div>
+                
+                <div class="cyber-form-group">
+                    <label class="cyber-label">Nota Admin</label>
+                    <textarea class="cyber-input" id="adminNote" rows="2" placeholder="Nota untuk pengguna scanner..."></textarea>
+                </div>
+                
+                <div class="cyber-form-group">
+                    <label class="cyber-label">MEGA ID</label>
+                    <input type="text" class="cyber-input" id="megaId" placeholder="Masukkan MEGA ID">
+                </div>
+                
+                <div class="cyber-form-group">
+                    <button class="cyber-btn cyber-btn-primary" id="generateBtn">
+                        <i class="fas fa-plus-circle me-2"></i>Jana Kod Akses
+                    </button>
+                </div>
+                
+                <div class="cyber-form-group">
+                    <div class="access-code" id="generatedCode">
+                        Tiada kod dijana
+                    </div>
+                </div>
+                
+                <div class="cyber-form-group">
+                    <label class="cyber-label">Pautan Scanner</label>
+                    <div class="cyber-input-group">
+                        <input type="text" class="cyber-input" id="scannerLink" readonly>
+                        <button class="cyber-btn cyber-btn-secondary" id="copyLinkBtn">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cyber-card">
+                <div class="cyber-card-header">
+                    <i class="fas fa-chart-line"></i> Statistik Sistem
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalCodes">0</div>
+                        <div class="stat-label">Jumlah Kod</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="activeCodes">0</div>
+                        <div class="stat-label">Kod Aktif</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalScans">0</div>
+                        <div class="stat-label">Jumlah Scan</div>
+                    </div>
+                </div>
+                
+                <div class="cyber-card-header">
+                    <i class="fas fa-history"></i> Scan Terkini
+                </div>
+                
+                <div class="recent-scans" id="recentScans">
+                    <div class="empty-state">Tiada scan lagi</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cyber-card">
+            <div class="cyber-card-header">
+                <i class="fas fa-list"></i> Kod Akses Aktif
+            </div>
+            
+            <div id="activeCodesList">
+                <div class="empty-state">Tiada kod akses aktif</div>
+            </div>
+        </div>
+        
+        <div class="cyber-card">
+            <div class="cyber-card-header">
+                <i class="fas fa-terminal"></i> Log Aktiviti
+            </div>
+            
+            <div class="cyber-terminal" id="terminal">
+                <div class="terminal-line">[00:00:01] Sistem dimulakan</div>
+                <div class="terminal-line">[00:00:03] Terminal admin sedia</div>
+            </div>
+        </div>
+        
+        <footer class="cyber-footer">
+            <p>RealScan Premium v2.0.0 | Advanced Mega888 Analysis System</p>
+        </footer>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/matrix-effect.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+</html>
